@@ -1,0 +1,27 @@
+{
+  "name": "project-terex",
+  "version": "1.0.0",
+  "description": "server for admin portal in student technical council of IIT-Roorkee ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endurance21/Project-terex.git"
+  },
+  "keywords": [
+    "iit",
+    "roorkee"
+  ],
+  "author": "DIVYANSHU RAJ",
+  "license": "MIT ",
+  "bugs": {
+    "url": "https://github.com/endurance21/Project-terex/issues"
+  },
+  "homepage": "https://github.com/endurance21/Project-terex#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
