@@ -1,27 +1,37 @@
 {
-  "name": "project-terex",
+  "type": "module",
+  "name": "project-amido",
   "version": "1.0.0",
-  "description": "server for admin portal in student technical council of IIT-Roorkee ",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm start ",
+    "pre": "node -r dotenv/config.js dotenv_config_path=.env "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/endurance21/Project-terex.git"
+    "url": "git+https://github.com/endurance21/project-amido.git"
   },
   "keywords": [
-    "iit",
-    "roorkee"
+    "e-commerce"
   ],
-  "author": "DIVYANSHU RAJ",
-  "license": "MIT ",
+  "author": "endurance21",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/endurance21/Project-terex/issues"
+    "url": "https://github.com/endurance21/project-amido/issues"
   },
-  "homepage": "https://github.com/endurance21/Project-terex#readme",
+  "homepage": "https://github.com/endurance21/project-amido#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.20",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "uuid": "^8.1.0"
   }
 }
