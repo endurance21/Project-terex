@@ -1,3 +1,3 @@
-# project-amido
+# project-terex
 
-An ecommerce website for RK_INDUSTRIES
+Backend powering STC@IITR main website ! 
