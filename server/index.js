@@ -21,6 +21,14 @@ app.use(bodypParser.json())
 app.use(cookieParser())
 
 app.use(morgan('dev'))
+
+//to allow Cross origin requests!
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  next()
+})
+
 app.use(ExpressValidator())  //validations of input by user , for example email validations and non-empty password validationss
 app.use(signUpRouter)
 app.use(signInrouter)
