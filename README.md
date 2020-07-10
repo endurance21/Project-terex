@@ -14,7 +14,7 @@ Backend powering STC@IITR main website !
     * email
     * password
   
-  * /signOut    eg - >  http://162.243.168.224:30000/signIn {GET}
+  * /signOut    eg - >  http://162.243.168.224:30000/signOut {GET}
 
 * ## Notices
 
