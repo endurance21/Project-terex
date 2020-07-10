@@ -6,7 +6,7 @@ export function submitNotice(req, res, next){
         title:req.body.title,
         content:req.body.content,
         date:req.body.date,
-        user:req.user
+        user:req.body.user
     }
 
     let newNotice = new Notice(noticeBody)
@@ -24,7 +24,21 @@ export function submitNotice(req, res, next){
     })
 }
 
-export function fetchNotice(req,res, next){
+export function fetchNoticeForUser(req,res, next){
+    Notice.find({approved:true},(err,result)=>{
+        if(err){
+            let errorMessage = err
+            console.log(errorMessage)
+            return res.status(400).json({
+                errorMessage : errorMessage
+            })
+        }
+
+        res.json(result)
+    })
+
+}
+export function fetchNoticeForAdmin(req,res, next){
     Notice.find((err,result)=>{
         if(err){
             let errorMessage = err
@@ -37,4 +51,17 @@ export function fetchNotice(req,res, next){
         res.json(result)
     })
 
+}
+
+
+
+
+export function approveNotice(req, res){
+    let id = req.params.id ;
+    Notice.updateOne({_id:id},{approved:true},(err, result)=>{
+        if(err){
+            res.json(err)
+        }
+        res.json({message:"updated sucessfully"})
+    })
 }

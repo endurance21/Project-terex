@@ -21,6 +21,10 @@ const Notice = new Schema({
     date:{
         type:String,
         required:true
+    },
+    approved:{
+        type:Boolean,
+        default:false
     }
 },({timestamps:true}))
 

@@ -7,8 +7,8 @@ function authorizer(){
 }
 
 export const isAuth = (req, res, next) => {
-    console.log(req.auth,req.user)
-    let user = req.user&& req.auth && req.user._id == req.auth._id;
+    console.log(req.auth,req.body.user)
+    let user = req.body.user&& req.auth && req.body.user._id == req.auth._id;
     if (!user) {
         return res.status(403).json({
             error: 'Access denied'
@@ -18,7 +18,7 @@ export const isAuth = (req, res, next) => {
 };
 
 export const isAdmin = (req, res, next) => {
-    if (req.user.role === 0) {
+    if (req.body.user.role === 0) {
         return res.status(403).json({
             error: 'Admin resourse! Access denied'
         });
