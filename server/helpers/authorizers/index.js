@@ -7,7 +7,7 @@ function authorizer(){
 }
 
 export const isAuth = (req, res, next) => {
-    console.log(req.auth)
+    console.log(req.auth,req.user)
     let user = req.user&& req.auth && req.user._id == req.auth._id;
     if (!user) {
         return res.status(403).json({

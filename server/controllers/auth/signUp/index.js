@@ -2,7 +2,7 @@ import User from '../../../../database/models/users/index.js'
 import DbErrorHandler from  '../../../helpers/errorHandlers/database/index.js'
 
 function signUp(req, res){
-    
+    console.log(req.body)
     const user  = new User(req.body)
     user.save((err, user)=>{
         if(err){

@@ -1,11 +1,11 @@
 import Notice from '../../../database/models/notices/index.js'
 
 export function submitNotice(req, res, next){
-
+    console.log(req.body)
     let noticeBody = {
-        title:req.title,
-        content:req.content,
-        date:date.now(),
+        title:req.body.title,
+        content:req.body.content,
+        date:req.body.date,
         user:req.user
     }
 
@@ -13,25 +13,28 @@ export function submitNotice(req, res, next){
 
     newNotice.save((err, notice)=>{
         if(err){
-            let errorMessage = noticeErrorHandler(err)
+            let errorMessage = err
             console.log(errorMessage)
             return res.status(400).json({
                 errorMessage : errorMessage
             })
+        }
 
          res.json(notice)   
-        }
     })
 }
 
 export function fetchNotice(req,res, next){
-    let notices = [] 
     Notice.find((err,result)=>{
         if(err){
-
+            let errorMessage = err
+            console.log(errorMessage)
+            return res.status(400).json({
+                errorMessage : errorMessage
+            })
         }
 
-        console.log(result)
+        res.json(result)
     })
 
 }
