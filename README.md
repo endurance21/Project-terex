@@ -9,15 +9,9 @@ Backend powering STC@IITR main website !
 ## PUBLIC - APIS
 
 * ## AUTH
-  * /signUp 
-   
-    * name
-    * email
-    * password 
-   
-   
-  * /signIn
+
+  * /signIn  eg - >  http://162.243.168.224:30000/signIn  {POST}
     * email
     * password
   
-  * /signOut   
+  * /signOut    eg - >  http://162.243.168.224:30000/signIn {GET}
