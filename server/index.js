@@ -10,6 +10,7 @@ import signOutRouter from './routes/auth/signOut/index.js'
 import ExpressValidator from 'express-validator'
 import authorizer from './helpers/authorizers/index.js'
 import userRouter from './routes/users/index.js'
+import noticeRouter from './routes/notices/index.js'
 const __dirname = path.resolve() // why __dirname is not working 
 dotenv.config({path:path.resolve(__dirname , '.env')}) 
 const port  = process.env.PORT
@@ -34,6 +35,7 @@ app.use(signUpRouter)
 app.use(signInrouter)
 app.use(signOutRouter)
 app.use(userRouter)
+app.use(noticeRouter)
 
 app.get('/hello',authorizer(),(req,res)=>{
     res.send("hello")
