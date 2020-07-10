@@ -8,7 +8,7 @@ Backend powering STC@IITR main website !
 
 ## PUBLIC - APIS
 
-* ## AUTH
+* ## Auth
 
   * /signIn  eg - >  http://162.243.168.224:30000/signIn  {POST}
     * email
